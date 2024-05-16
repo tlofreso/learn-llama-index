@@ -8,8 +8,8 @@ from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.llms.openai import OpenAI
 
-# logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-# logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 # By default, ada v2 is used for embedding.
 # The new text-embedding-3-small is more capable, and 1/5th the price.
@@ -17,31 +17,6 @@ Settings.llm = OpenAI(model="gpt-4o")
 Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
 Settings.text_splitter = SentenceSplitter(chunk_size=1000, chunk_overlap=200)
 PERSIST_DIR = "./storage"
-
-STATES = [
-    "Arizona",
-    "Colorado",
-    "Delaware",
-    "Florida",
-    "Georgia",
-    "Illinois",
-    "Indiana",
-    "Iowa",
-    "Kentucky",
-    "Maryland",
-    "Michigan",
-    "Minnesota",
-    "New Mexico",
-    "North Carolina",
-    "Ohio",
-    "Pennsylvania",
-    "South Carolina",
-    "Tennessee",
-    "Virginia",
-    "Washington DC",
-    "West Virginia",
-    "Wisconsin",
-]
 
 
 def load():
