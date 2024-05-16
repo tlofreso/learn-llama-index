@@ -1,6 +1,7 @@
 # Mine
 .vscode
 **/storage/
+*uide.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
