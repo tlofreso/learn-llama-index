@@ -10,7 +10,6 @@ from llama_index.core import (
     load_index_from_storage,
 )
 
-os.environ["OPENAI_API_KEY"] = "****"
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))

@@ -1,5 +1,6 @@
 # Mine
 .vscode
+.DS_Store
 **/storage/
 *uide.pdf
 

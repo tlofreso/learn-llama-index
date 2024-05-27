@@ -8,8 +8,8 @@ from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.llms.openai import OpenAI
 
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
-logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
+# logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+# logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 # By default, ada v2 is used for embedding.
 # The new text-embedding-3-small is more capable, and 1/5th the price.
@@ -48,6 +48,7 @@ if __name__ == "__main__":
     index = load_index_from_storage(storage_context)
     query_engine = index.as_query_engine()
     for prompt in prompts:
+        print("\n\n------------------------\n")
         response = query_engine.query(f"{prompt}")
         print(f"\nPrompt: {prompt}")
         print(f"\nAnswer: {response.response}\n")
@@ -55,3 +56,4 @@ if __name__ == "__main__":
             filename = node.node.metadata["file_name"]
             page = node.node.metadata["page_label"]
             print(f"Citation: {filename} - page {page}")
+
